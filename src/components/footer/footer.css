@@ -1,3 +1,5 @@
+/******************************************* Desktop ********************************************/
+
 .footer {
   background-color: black;
   width: 100%;
@@ -24,8 +26,14 @@
 
 .logo-footer p {
   display: flex;
+  width: 100%;
   text-align: center;
   justify-content: center;
   color: white;
   height: 30px;
+}
+
+/******************************************** Mobile ***********************************************/
+
+@media (min-width: 768px) {
 }
