@@ -27,6 +27,7 @@
 .logo-footer p {
   display: flex;
   width: 100%;
+  font-size: 24px;
   text-align: center;
   justify-content: center;
   color: white;
@@ -35,5 +36,13 @@
 
 /******************************************** Mobile ***********************************************/
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
+  .logo-footer img {
+    width: 122px;
+    height: 39px;
+  }
+
+  .logo-footer p {
+    font-size: 12px;
+  }
 }

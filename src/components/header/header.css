@@ -34,6 +34,7 @@
 }
 
 .img-home {
+  display: flex;
   width: 90%;
   height: 223px;
   margin: 0 60px 43px 60px;

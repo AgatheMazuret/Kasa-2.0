@@ -1,4 +1,4 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 import "./header.css";
 
 const Nav = () => {
@@ -8,8 +8,8 @@ const Nav = () => {
         <img src="/logo.svg" alt="Logo Kasa" />
 
         <div className="nav">
-          <a>Accueil</a>
-          <a> A Propos</a>
+          <NavLink to="/home">Accueil</NavLink>
+          <NavLink to="/a-propos">A propos</NavLink>
         </div>
       </div>
       <div className="img-home">
