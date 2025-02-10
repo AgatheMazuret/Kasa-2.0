@@ -1,3 +1,4 @@
+import { createRoot } from "react-dom/client";
 import Nav from "./components/header/header";
 import Footer from "./components/footer/footer";
 import "./styles/global.css";
@@ -14,4 +15,6 @@ const Homecard = () => {
   );
 };
 
+const root = createRoot(document.getElementById("root")!);
+root.render(<Homecard />);
 export default Homecard;

@@ -1,2 +1,2 @@
 import { useState } from "react";
-import "../carousel/carousel.css";
+import "./carousel.css";

@@ -5,7 +5,7 @@ import Apropos from "./pages/a-propos/apropos.tsx";
 import Error from "./pages/error/error.tsx";
 const router = createBrowserRouter([
   {
-    path: "/index",
+    path: "/home",
     element: <Homecard />,
   },
   {
@@ -16,7 +16,6 @@ const router = createBrowserRouter([
     path: "/a-propos",
     element: <Apropos />,
   },
-
   {
     path: "/error",
     element: <Error />,
