@@ -1,12 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homecard from "./index.tsx";
-import House from "./pages/house/house.tsx";
-import Apropos from "./pages/a-propos/apropos.tsx";
-import Error from "./pages/error/error.tsx";
+import Homecard from "./pages/home/home";
+import House from "./pages/house/house";
+import Apropos from "./pages/a-propos/apropos";
+import Error from "./pages/error/error";
+
 const router = createBrowserRouter([
   {
-    path: "/home",
+    path: "/",
     element: <Homecard />,
+    errorElement: <Error />,
   },
   {
     path: "/house/:id",
@@ -15,10 +17,6 @@ const router = createBrowserRouter([
   {
     path: "/a-propos",
     element: <Apropos />,
-  },
-  {
-    path: "/error",
-    element: <Error />,
   },
 ]);
 

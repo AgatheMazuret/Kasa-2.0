@@ -1,5 +1,3 @@
-import { createRoot } from "react-dom/client";
-
 function Apropos() {
   return (
     <div>

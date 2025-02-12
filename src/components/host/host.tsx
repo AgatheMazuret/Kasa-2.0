@@ -1,14 +1,25 @@
-import React from "react";
 import "../host/host.css";
 
-function Host({ host }) {
+// Définir le type des props
+type HostProps = {
+  host: {
+    name: string;
+    picture: string;
+  };
+};
+
+function Host({ host }: HostProps) {
+  if (!host || !host.name || !host.picture) {
+    return <div className="hostError">Host information is missing.</div>;
+  }
+
   return (
     <div className="hostNamePicture">
       <div className="hostName">
         <p>{host.name}</p>
       </div>
       <div className="hostPicture">
-        <img src={host.picture} alt={host.name} />
+        <img src={host.picture} alt={`Picture of ${host.name}`} />
       </div>
     </div>
   );

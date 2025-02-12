@@ -8,12 +8,13 @@ const Nav = () => {
         <img src="/logo.svg" alt="Logo Kasa" />
 
         <div className="nav">
-          <NavLink to="/home">Accueil</NavLink>
-          <NavLink to="/a-propos">A propos</NavLink>
+          <NavLink to="/">
+            <div>Accueil</div>
+          </NavLink>
+          <NavLink to="/a-propos">
+            <div>A propos</div>
+          </NavLink>
         </div>
-      </div>
-      <div className="img-home">
-        <p>Chez vous, partout et ailleurs</p>
       </div>
     </div>
   );

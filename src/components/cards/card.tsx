@@ -1,6 +1,6 @@
 import "./card.css";
-import React from "react";
 import logements from "../../data/logements.json";
+import { Link } from "react-router-dom";
 
 // Typage des propriétés pour le composant Card
 type CardProps = {
@@ -11,16 +11,11 @@ type CardProps = {
 
 // Composant Card qui affiche une carte et redirige vers une autre page
 function Card({ id, cover, title }: CardProps) {
-  const handleClick = () => {
-    // Ouvre un nouvel onglet pour la route house/:id
-    window.open(`/house/${id}`, "_blank");
-  };
-
   return (
-    <div className="card" onClick={handleClick} style={{ cursor: "pointer" }}>
+    <Link to={`/house/${id}`} className="card">
       <img src={cover} alt={title} />
       <h3>{title}</h3>
-    </div>
+    </Link>
   );
 }
 
