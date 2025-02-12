@@ -3,20 +3,46 @@ import Homecard from "./pages/home/home";
 import House from "./pages/house/house";
 import Apropos from "./pages/a-propos/apropos";
 import Error from "./pages/error/error";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
+import Banner from "./components/banner/banner";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homecard />,
-    errorElement: <Error />,
+    element: (
+      <>
+        <Homecard />
+        <Footer />
+      </>
+    ),
+    errorElement: (
+      <>
+        <Header />
+        <Error />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/house/:id",
-    element: <House />,
+    element: (
+      <>
+        <Header />
+        <House />
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/a-propos",
-    element: <Apropos />,
+    element: (
+      <>
+        <Header />
+        <Apropos />
+        <Footer />
+      </>
+    ),
   },
 ]);
 
