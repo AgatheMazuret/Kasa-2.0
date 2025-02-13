@@ -1,35 +1,49 @@
 import React, { useState } from "react";
-import "./carousel.css";
-import Host from "../host/host";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+import "./carousel";
 
-// Crée un composant `Carousel` qui affiche les images de la maison
+type CarouselProps = { images: string[] };
 
-type CarouselProps = {
-  pictures: string[];
-  title: string;
-};
+function Carousel({ images }: CarouselProps) {
+  const [currentImage, setCurrentImage] = useState(0);
 
-function Carousel({ pictures, title }: CarouselProps) {
+  // Fonction pour avancer l'image
+  const nextImage = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  // Fonction pour reculer l'image
+  const prevImage = () => {
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
   return (
-    <div className="carousel">
-      {pictures.map((picture, index) => (
-        <img key={index} src={picture} alt={title} />
-      ))}
+    <div className="carouselContainer">
+      {/* Chevron gauche avec Font Awesome */}
+      <button className="carousel-chevron left" onClick={prevImage}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+
+      {/* Image du carousel */}
+
+      <img
+        src={images[currentImage]}
+        alt="carousel"
+        className="carouselImage"
+      />
+
+      {/* Chevron droit avec Font Awesome */}
+      <button className="carousel-chevron right" onClick={nextImage}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
     </div>
   );
 }
 
-// importer les images de house
-
-// Crée un tableau d'images pour le carousel
-
-// Crée un composant `Carousel` qui affiche les images de la maison
-
-// passer à l'image suivante et revenir à la première image
-
-// passer à l'image précédente et revenir à la dernière image
-
-//  Ajouter les flèches pour passer à l'image suivante ou précédente
-
-// Exporter le composant Carousel
 export default Carousel;

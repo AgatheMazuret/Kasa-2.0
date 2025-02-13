@@ -1,0 +1,12 @@
+.img-home {
+  display: flex;
+  width: 90%;
+  height: 223px;
+  margin: 0 60px 43px 60px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/photo-accueil.png");
+}
