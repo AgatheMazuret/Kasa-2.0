@@ -1,4 +1,4 @@
-import "./card";
+import "../cards/card.css";
 import logements from "../../data/logements.json";
 import { Link } from "react-router-dom";
 

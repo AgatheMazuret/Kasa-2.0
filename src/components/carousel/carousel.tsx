@@ -4,7 +4,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "./carousel";
+import "./carousel.css";
 
 type CarouselProps = { images: string[] };
 
@@ -26,9 +26,9 @@ function Carousel({ images }: CarouselProps) {
   return (
     <div className="carouselContainer">
       {/* Chevron gauche avec Font Awesome */}
-      <button className="carousel-chevron left" onClick={prevImage}>
+      <a className="carousel-chevron-left" onClick={prevImage}>
         <FontAwesomeIcon icon={faChevronLeft} />
-      </button>
+      </a>
 
       {/* Image du carousel */}
 
@@ -39,9 +39,9 @@ function Carousel({ images }: CarouselProps) {
       />
 
       {/* Chevron droit avec Font Awesome */}
-      <button className="carousel-chevron right" onClick={nextImage}>
+      <a className="carousel-chevron-right" onClick={nextImage}>
         <FontAwesomeIcon icon={faChevronRight} />
-      </button>
+      </a>
     </div>
   );
 }

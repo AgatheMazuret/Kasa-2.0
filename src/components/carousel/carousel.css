@@ -1,15 +1,44 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
 .carouselContainer {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1440px;
+  width: 1240px;
   height: 415px;
-  overflow: hidden;
-  position: relative;
 }
 
-.carouselContainer img {
-  width: 1440px;
-  height: 4150px;
+.carouselImage {
+  width: 1240px;
+  height: 415px;
   object-fit: cover;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-chevron-left,
+.carousel-chevron-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 50px;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.carousel-chevron-left {
+  left: 20px;
+}
+
+.carousel-chevron-right {
+  right: 20px;
 }

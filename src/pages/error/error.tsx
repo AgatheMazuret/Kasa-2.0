@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../error/error";
+import "../error/error.css";
 
 function Error() {
   return (
