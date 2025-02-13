@@ -1,4 +1,4 @@
-import "../host/host.css";
+import "../host/host";
 
 // Définir le type des props
 type HostProps = {
