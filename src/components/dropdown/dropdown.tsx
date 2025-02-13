@@ -1,32 +1,65 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons"; //
-
+import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "./dropdown.css";
+
 type DropdownProps = {
-  title: string;
-  content: string;
+  description: string;
+  equipments: string[];
 };
 
-function Dropdown({ title, content }: DropdownProps) {
-  const [active, setActive] = useState(true);
-  const handleToggle = () => {
-    setActive(!active);
-  };
+function Dropdown({ description, equipments }: DropdownProps) {
+  const [isDescriptionOpen, setDescriptionOpen] = useState(false);
+  const [isEquipmentsOpen, setEquipmentsOpen] = useState(false);
+
+  const toggleDescription = () => setDescriptionOpen((prev) => !prev);
+  const toggleEquipments = () => setEquipmentsOpen((prev) => !prev);
 
   return (
-    <div
-      className={`dropdown ${active ? "active" : ""}`}
-      onClick={handleToggle}
-    >
-      <div className="dropdownBlock">
-        <div className="title">{title}</div>
-        {active && <div className="text">{content}</div>}{" "}
-        {/* Le contenu est affiché seulement si active est true */}
+    <div className="dropdownContainer">
+      {/* Section: Description */}
+      <div className={`dropdown ${isDescriptionOpen ? "active" : ""}`}>
+        <div
+          className="dropdownHeader"
+          onClick={toggleDescription}
+          role="button"
+          aria-expanded={isDescriptionOpen}
+          aria-controls="descriptionContent"
+          tabIndex={0}
+        >
+          <span className="downArrow">Description</span>
+          <FontAwesomeIcon icon={faChevronUp} />
+        </div>
+        {isDescriptionOpen && (
+          <div id="descriptionContent" className="text">
+            {description}
+          </div>
+        )}
       </div>
-      <span className="logoSection">
-        <FontAwesomeIcon icon={faChevronDown} />
-      </span>
+
+      {/* Section: Equipments */}
+      <div className={`dropdown ${isEquipmentsOpen ? "active" : ""}`}>
+        <div
+          className="dropdownHeader"
+          onClick={toggleEquipments}
+          role="button"
+          aria-expanded={isEquipmentsOpen}
+          aria-controls="equipmentsContent"
+          tabIndex={0}
+        >
+          <span className="downArrow">Equipments</span>
+          <FontAwesomeIcon icon={faChevronUp} />
+        </div>
+        {isEquipmentsOpen && equipments.length > 0 && (
+          <div id="equipmentsContent">
+            <ul>
+              {equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

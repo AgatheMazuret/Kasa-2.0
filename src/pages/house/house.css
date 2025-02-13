@@ -1,4 +1,33 @@
 .card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 50px;
   width: 1240px;
-  height: 415px;
+  margin-bottom: 50px;
+}
+
+.nameLogement {
+  width: 90%;
+  display: flex;
+  font-size: 36px;
+  font-weight: 500;
+  margin-left: 100px;
+  margin-bottom: 5px;
+  color: #ff6060;
+  font-family: "Montserrat", sans-serif;
+}
+
+.location {
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  margin-left: 100px;
+  width: 50%;
 }

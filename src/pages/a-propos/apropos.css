@@ -1,0 +1,20 @@
+.dropdownContainerApropos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdownApropos {
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  display: flex;
+  padding: 10px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  background-color: #ff6060;
+  color: white;
+  border-radius: 5px;
+}

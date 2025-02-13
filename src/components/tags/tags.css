@@ -1,0 +1,20 @@
+.tags {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-left: 100px;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.tag {
+  color: white;
+  background-color: #ff6060;
+  border-radius: 25px;
+  padding: 10px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}

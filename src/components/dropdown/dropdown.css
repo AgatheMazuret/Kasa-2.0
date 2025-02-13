@@ -1,1 +1,31 @@
+.dropdownContainer {
+  display: flex;
+  gap: 76px;
+}
 
+.dropdownContainer #descriptionContent {
+  width: 550px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+.equipmentsContent li {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+.dropdownHeader {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding: 10px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  background-color: #ff6060;
+  color: white;
+  border-radius: 25px;
+}
+
+.downArrow {
+  margin: 3px 450px 2px 15px;
+}

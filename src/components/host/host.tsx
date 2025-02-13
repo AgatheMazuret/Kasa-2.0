@@ -15,11 +15,11 @@ function Host({ host }: HostProps) {
 
   return (
     <div className="hostNamePicture">
-      <div className="hostName">
-        <p>{host.name}</p>
-      </div>
       <div className="hostPicture">
         <img src={host.picture} alt={`Picture of ${host.name}`} />
+      </div>
+      <div className="hostName">
+        <p>{host.name}</p>
       </div>
     </div>
   );
