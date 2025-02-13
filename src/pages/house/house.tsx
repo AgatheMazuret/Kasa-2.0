@@ -16,7 +16,7 @@ function House() {
   }
 
   return (
-    <div className="card">
+    <div className="cardHouse">
       {/* Utilise `Link` pour rediriger vers la page spécifique de la maison */}
       <Link to={`/house/${id}`} className="card-link"></Link>
       <Carousel images={logement.pictures} />

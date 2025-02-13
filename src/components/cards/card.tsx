@@ -23,7 +23,7 @@ function Card({ id, cover, title }: CardProps) {
 function Gallery() {
   return (
     <section className="gallery">
-      <div className="card-container">
+      <div className="cardContainer">
         {logements.map((logement) => (
           <Card
             key={logement.id}
