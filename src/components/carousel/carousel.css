@@ -1,3 +1,5 @@
+/************************************************* Version Desktop *****************************************************/
+
 .cardHouse {
   display: flex;
   flex-direction: column;
@@ -41,4 +43,32 @@
 
 .carousel-chevron-right {
   right: 20px;
+}
+
+/************************************************* Version Desktop *****************************************************/
+
+@media (max-width: 480px) {
+  .carouselImage {
+    width: 335;
+    height: 255px;
+    align-items: center;
+  }
+
+  .carouselContainer {
+    width: 335px;
+    height: 255px;
+  }
+
+  .carousel-chevron-left,
+  .carousel-chevron-right {
+    font-size: 30px;
+  }
+
+  .carousel-chevron-left {
+    left: 0;
+  }
+
+  .carousel-chevron-right {
+    right: 0;
+  }
 }

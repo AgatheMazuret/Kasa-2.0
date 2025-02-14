@@ -6,6 +6,7 @@ import Logements from "../../data/logements.json";
 import Carousel from "../../components/carousel/carousel";
 import Host from "../../components/host/host";
 import Tag from "../../components/tags/tags";
+import Rating from "../../components/rating/rating";
 
 function House() {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +28,7 @@ function House() {
         </div>
         <Host host={logement.host} />
         <Tag tag={logement.tags} />
+        <Rating rating={[logement.rating]} />
       </div>
       <Dropdown
         equipments={logement.equipments}

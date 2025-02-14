@@ -1,0 +1,18 @@
+/******************************************************* Version Desktop ***********************************************/
+
+.rating {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/******************************************************* Version Mobile ***********************************************/
+
+@media (max-width: 480px) {
+  .rating {
+    justify-content: center;
+  }
+}

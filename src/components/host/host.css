@@ -1,6 +1,9 @@
+/************************************************** Version Desktop *****************************************************/
+
 .hostNamePicture {
   display: flex;
-  width: 49%;
+  width: 100%;
+  justify-content: flex-start;
   flex-direction: row-reverse;
   align-items: center;
 }
@@ -18,4 +21,17 @@
   margin-right: 15px;
   font-family: "Montserrat", sans-serif;
   color: #ff6060;
+}
+
+/************************************************** Version Mobile *****************************************************/
+
+@media (max-width: 480px) {
+  .hostNamePicture {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hostName p {
+    font-size: 14px;
+  }
 }

@@ -1,11 +1,9 @@
 .logo {
   display: flex;
   justify-content: flex-start;
-  justify-content: space-between;
   margin-top: 20px;
   width: 100%;
   margin-bottom: 50px;
-  margin-left: 60px;
 }
 
 .nav {
@@ -46,5 +44,17 @@
 
 /******************************************** Mobile ***********************************************/
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
+  .logo img {
+    width: 145px;
+    height: 47px;
+  }
+
+  .nav {
+    gap: 20%;
+  }
+
+  .nav a {
+    font-size: 12px;
+  }
 }

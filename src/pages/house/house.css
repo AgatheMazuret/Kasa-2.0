@@ -1,25 +1,21 @@
-.cardHouse {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
+/*************************************************** Version Desktop  ******************************************************/
 
 .content {
   display: grid;
   justify-items: start;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
-  gap: 50px;
+  gap: 5px;
   width: 1240px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .nameLogement {
-  width: 90%;
+  width: 100%;
   display: flex;
   font-size: 36px;
   font-weight: 500;
-  margin-left: 100px;
+
   margin-bottom: 5px;
   color: #ff6060;
   font-family: "Montserrat", sans-serif;
@@ -27,8 +23,27 @@
 
 .location {
   margin-top: 0;
+  margin-bottom: 0;
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
-  margin-left: 100px;
   width: 50%;
+}
+
+/*************************************************** Version Mobile  ******************************************************/
+
+@media (max-width: 480px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .nameLogement {
+    font-size: 24px;
+  }
+
+  .location {
+    font-size: 14px;
+  }
 }
