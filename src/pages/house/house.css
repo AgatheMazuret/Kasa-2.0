@@ -33,14 +33,14 @@
 
 @media (max-width: 480px) {
   .content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 20px;
     width: 100%;
   }
 
   .nameLogement {
     font-size: 24px;
+    width: 100%;
   }
 
   .location {

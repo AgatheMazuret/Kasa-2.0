@@ -37,6 +37,14 @@ li {
   margin: 3px 450px 2px 15px;
 }
 
+.dropdownHeader svg {
+  transition: transform 0.5s ease;
+}
+
+.dropdown.active .dropdownHeader svg {
+  transform: rotate(180deg);
+}
+
 /*************************************************** Verson mobile *********************************************************************/
 @media (max-width: 480px) {
   .dropdownContainer {
@@ -47,7 +55,16 @@ li {
   }
 
   .dropdownHeader {
-    width: 100%;
+    width: 95%;
     align-items: center;
+  }
+
+  .dropdownContainer #descriptionContent {
+    width: 95%;
+    font-size: 16px;
+  }
+
+  .downArrow {
+    margin: 3px 250px 2px 15px;
   }
 }

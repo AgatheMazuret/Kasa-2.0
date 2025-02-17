@@ -28,3 +28,19 @@
   font-size: 18px;
   text-decoration: underline solid 2px lightslategray;
 }
+
+@media (max-width: 480px) {
+  .textError h1 {
+    font-size: 96px;
+    margin-bottom: 69px;
+    margin-top: 69px;
+  }
+
+  .textError h2 {
+    font-size: 18px;
+  }
+
+  .accueil {
+    font-size: 14px;
+  }
+}
