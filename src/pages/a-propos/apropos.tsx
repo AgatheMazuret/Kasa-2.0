@@ -18,33 +18,36 @@ function Dropdown() {
   ];
 
   return (
-    <div className="dropdownContainerApropos">
-      {sections.map((section) => (
-        <div
-          key={section.name}
-          className={`dropdown ${
-            activeDropdown === section.name ? "active" : ""
-          }`}
-        >
+    <>
+      <div className="bannerApropos"></div>
+      <div className="dropdownContainerApropos">
+        {sections.map((section) => (
           <div
-            className="dropdownApropos"
-            onClick={() => toggleDropdown(section.name)}
-            role="button"
-            aria-expanded={activeDropdown === section.name}
-            aria-controls={`${section.name}Content`}
-            tabIndex={0}
+            key={section.name}
+            className={`dropdown ${
+              activeDropdown === section.name ? "active" : ""
+            }`}
           >
-            <span className="downArrow">{section.name}</span>
-            <FontAwesomeIcon icon={faChevronUp} />
-          </div>
-          {activeDropdown === section.name && (
-            <div id={`${section.name}Content`} className="text">
-              <p>{section.content}</p>
+            <div
+              className="dropdownApropos"
+              onClick={() => toggleDropdown(section.name)}
+              role="button"
+              aria-expanded={activeDropdown === section.name}
+              aria-controls={`${section.name}Content`}
+              tabIndex={0}
+            >
+              <span className="downArrow">{section.name}</span>
+              <FontAwesomeIcon icon={faChevronUp} />
             </div>
-          )}
-        </div>
-      ))}
-    </div>
+            {activeDropdown === section.name && (
+              <div id={`${section.name}Content`} className="text">
+                <p>{section.content}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 

@@ -39,7 +39,6 @@ const router = createBrowserRouter([
     element: (
       <>
         <Header />
-        <Banner />
         <Apropos />
         <Footer />
       </>
