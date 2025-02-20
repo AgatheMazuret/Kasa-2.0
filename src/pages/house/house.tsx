@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import "../house/house.css";
 import Dropdown from "../../components/dropdown/dropdown";
 import Logements from "../../data/logements.json";
 import Carousel from "../../components/carousel/carousel";
@@ -13,27 +12,52 @@ function House() {
   const logement = Logements.find((house) => house.id === id);
 
   if (!logement) {
-    return <div>Logement non trouvé!</div>;
+    return (
+      <div className="flex flex-col items-center justify-center h-screen text-center">
+        <h1 className="text-2xl font-bold text-[#ff6060] mb-4">
+          Logement non trouvé!
+        </h1>
+        <Link to="/" className="text-blue-500 hover:underline text-lg">
+          Retour à la page d'accueil
+        </Link>
+      </div>
+    );
   }
 
   return (
-    <div className="cardHouse">
-      {/* Utilise `Link` pour rediriger vers la page spécifique de la maison */}
-      <Link to={`/house/${id}`} className="card-link"></Link>
+    <div className="w-full flex flex-col items-center">
+      {/* Carousel */}
       <Carousel images={logement.pictures} />
-      <div className="content">
-        <div className="nameLocation">
-          <h1 className="nameLogement">{logement.title}</h1>
-          <p className="location">{logement.location}</p>
+
+      {/* Content */}
+      <div className="flex flex-col gap-5 w-full px-4 md:flex-row md:w-[1240px] md:mb-7">
+        {/* Title and Location */}
+        <div className="flex flex-col w-full md:w-1/2">
+          <h1 className="text-2xl font-medium text-[#ff6060] mb-1 md:text-3xl">
+            {logement.title}
+          </h1>
+          <p className="text-sm w-full md:text-base">{logement.location}</p>
+
+          {/* Tags */}
+          <div className="w-full mt-2">
+            <Tag tag={logement.tags} />
+          </div>
         </div>
-        <Host host={logement.host} />
-        <Tag tag={logement.tags} />
-        <Rating rating={[logement.rating]} />
+
+        {/* Host and Rating */}
+        <div className="flex flex-row-reverse md:flex-col w-full md:w-1/2 items-start">
+          <Host host={logement.host} />
+          <Rating rating={[logement.rating]} />
+        </div>
       </div>
-      <Dropdown
-        equipments={logement.equipments}
-        description={logement.description}
-      />
+
+      {/* Dropdown */}
+      <div className="w-full px-4 md:w-[1240px]">
+        <Dropdown
+          equipments={logement.equipments}
+          description={logement.description}
+        />
+      </div>
     </div>
   );
 }

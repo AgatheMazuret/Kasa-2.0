@@ -6,6 +6,7 @@
   justify-content: flex-start;
   flex-direction: row-reverse;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .hostPicture img {
@@ -28,6 +29,16 @@
   .hostNamePicture {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .hostPicture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hostNamePicture img {
+    width: 50%;
   }
 
   .hostName p {
