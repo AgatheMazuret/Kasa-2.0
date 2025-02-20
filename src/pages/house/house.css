@@ -15,16 +15,14 @@
   display: flex;
   font-size: 36px;
   font-weight: 500;
-
+  order: 1;
   margin-bottom: 5px;
   color: #ff6060;
-  font-family: "Montserrat", sans-serif;
 }
 
 .location {
   margin-top: 0;
   margin-bottom: 0;
-  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   width: 50%;
 }
@@ -33,7 +31,9 @@
 
 @media (max-width: 480px) {
   .content {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     width: 100%;
   }
@@ -41,9 +41,32 @@
   .nameLogement {
     font-size: 24px;
     width: 100%;
+    order: 1;
+  }
+
+  .nameLocation {
+    order: 1;
   }
 
   .location {
     font-size: 14px;
+  }
+
+  .tags {
+    order: 2;
+  }
+
+  .rating {
+    order: 3;
+  }
+
+  .hostNamePicture {
+    order: 4;
+  }
+
+  .hostPicture {
+    width: 70px;
+    height: 70px;
+    align-items: flex-end;
   }
 }

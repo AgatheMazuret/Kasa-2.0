@@ -38,7 +38,7 @@ function Dropdown({ description, equipments }: DropdownProps) {
       </div>
 
       {/* Section: Equipments */}
-      <div className={`dropdown ${isEquipmentsOpen ? "active" : ""}`}>
+      <div className={`dropdown `}>
         <div
           className="dropdownHeader"
           onClick={toggleEquipments}
@@ -48,7 +48,12 @@ function Dropdown({ description, equipments }: DropdownProps) {
           tabIndex={0}
         >
           <span className="downArrow">Equipments</span>
-          <FontAwesomeIcon icon={faChevronUp} />
+          <FontAwesomeIcon
+            className={`transition ${
+              isEquipmentsOpen ? "rotate-180" : "rotate-0"
+            }`}
+            icon={faChevronUp}
+          />
         </div>
         {isEquipmentsOpen && equipments.length > 0 && (
           <div id="equipmentsContent">

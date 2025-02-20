@@ -20,8 +20,7 @@
 }
 
 .dropdownApropos {
-  width: 100%;
-  font-family: "Montserrat", sans-serif;
+  width: 90%;
   font-size: 18px;
   display: flex;
   padding: 10px 10px;
@@ -30,6 +29,14 @@
   background-color: #ff6060;
   color: white;
   border-radius: 5px;
+}
+
+.downArrow {
+  transition: transform 0.5s ease;
+}
+
+.dropdown.active .downArrow {
+  transform: rotate(180deg);
 }
 
 @media (max-width: 480px) {

@@ -5,7 +5,6 @@ import Apropos from "./pages/a-propos/apropos";
 import Error from "./pages/error/error";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-import Banner from "./components/banner/banner";
 
 const router = createBrowserRouter([
   {

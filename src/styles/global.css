@@ -1,9 +1,15 @@
+@import "tailwindcss";
+
 a {
   text-decoration: none;
 }
 
 body {
-  max-width: 1440px;
-  margin: 0 auto;
-  font-family: Montserrat;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
 }

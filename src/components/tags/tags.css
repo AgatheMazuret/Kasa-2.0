@@ -13,11 +13,10 @@
 .tag {
   color: white;
   background-color: #ff6060;
-  border-radius: 25px;
-  padding: 10px 30px;
+  border-radius: 10px;
+  padding: 8px 20px;
   font-size: 14px;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
 }
 
 /************************************************* Version Mobile **********************************************************/
