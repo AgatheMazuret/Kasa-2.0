@@ -4,19 +4,16 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import "./carousel.css";
 
 type CarouselProps = { images: string[] };
 
 function Carousel({ images }: CarouselProps) {
   const [currentImage, setCurrentImage] = useState(0);
 
-  // Fonction pour avancer l'image
   const nextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
   };
 
-  // Fonction pour reculer l'image
   const prevImage = () => {
     setCurrentImage(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
@@ -24,24 +21,29 @@ function Carousel({ images }: CarouselProps) {
   };
 
   return (
-    <div className="carouselContainer">
-      {/* Chevron gauche avec Font Awesome */}
-      <a className="carousel-chevron-left" onClick={prevImage}>
+    <div className="relative flex justify-center items-center w-[1240px] h-[415px] mb-5 max-w-full">
+      {/* Chevron gauche */}
+      <button
+        className="absolute top-1/2 transform -translate-y-1/2 text-4xl text-white z-10 cursor-pointer left-5"
+        onClick={prevImage}
+      >
         <FontAwesomeIcon icon={faChevronLeft} />
-      </a>
+      </button>
 
       {/* Image du carousel */}
-
       <img
         src={images[currentImage]}
         alt="carousel"
-        className="carouselImage"
+        className="w-[1240px] h-[415px] object-cover"
       />
 
-      {/* Chevron droit avec Font Awesome */}
-      <a className="carousel-chevron-right" onClick={nextImage}>
+      {/* Chevron droit */}
+      <button
+        className="absolute top-1/2 transform -translate-y-1/2 text-4xl text-white z-10 cursor-pointer right-5"
+        onClick={nextImage}
+      >
         <FontAwesomeIcon icon={faChevronRight} />
-      </a>
+      </button>
     </div>
   );
 }

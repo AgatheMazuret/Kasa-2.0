@@ -1,5 +1,3 @@
-import "../rating/rating.css";
-
 type RatingProps = {
   rating: number;
 };
@@ -8,7 +6,7 @@ function Rating({ rating }: RatingProps) {
   const starFull = "/star-full.png";
   const starEmpty = "/star-empty.png";
   return (
-    <div className="rating">
+    <div className="flex justify-end items-center w-full h-[95px] lg:m-0 lg:p-0">
       {Array.from({ length: 5 }, (_, index) => (
         <img
           key={index}
