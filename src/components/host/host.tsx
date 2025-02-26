@@ -15,19 +15,19 @@ function Host({ host }: HostProps) {
   }
 
   return (
-    <div className="flex flex-col gap-2.5 lg:flex-row-reverse lg:items-center lg:justify-start lg:mb-5 w-full">
+    <div className="flex flex-row-reverse gap-4 lg:flex-row-reverse lg:items-center lg:justify-start lg:mb-5 w-full">
       {/* Image de l'hôte */}
-      <div className="flex items-center justify-center">
+      <div className="flex items-center justify-center p-0">
         <img
-          className="w-1/2 lg:w-full lg:h-full object-cover rounded-full"
+          className="w-full lg:w-full lg:h-full object-cover rounded-full"
           src={host.picture}
           alt={`Picture of ${host.name}`}
         />
       </div>
 
       {/* Nom de l'hôte */}
-      <div className="flex items-center">
-        <p className="text-base lg:text-lg font-medium text-[#ff6060] lg:mr-4">
+      <div className="flex items-center ">
+        <p className="text-base text-[#ff6060] lg:text-lg  font-medium  lg:mr-4">
           {host.name}
         </p>
       </div>

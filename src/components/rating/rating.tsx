@@ -1,16 +1,16 @@
 type RatingProps = {
-  rating: number;
+  rating: string;
 };
+const starFull = "/star-full.png";
+const starEmpty = "/star-empty.png";
 
 function Rating({ rating }: RatingProps) {
-  const starFull = "/star-full.png";
-  const starEmpty = "/star-empty.png";
   return (
-    <div className="flex justify-end items-center w-full h-[95px] lg:m-0 lg:p-0">
+    <div className="flex items-center w-full h-[95px] lg:justify-end">
       {Array.from({ length: 5 }, (_, index) => (
         <img
           key={index}
-          src={index < rating ? starFull : starEmpty}
+          src={index < Number(rating) ? starFull : starEmpty}
           alt="star"
         />
       ))}

@@ -45,9 +45,9 @@ function House() {
         </div>
 
         {/* Host and Rating */}
-        <div className="flex flex-row-reverse md:flex-col w-full md:w-1/2 items-start">
+        <div className="flex flex-row-reverse lg:flex-col w-full lg:w-1/2 items-center">
           <Host host={logement.host} />
-          <Rating rating={[logement.rating]} />
+          <Rating rating={logement.rating} />
         </div>
       </div>
 

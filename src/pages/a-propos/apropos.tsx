@@ -3,10 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 function Dropdown() {
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [activeDropdowns, setActiveDropdowns] = useState([]);
 
   const toggleDropdown = (dropdownName) => {
-    setActiveDropdown((prev) => (prev === dropdownName ? null : dropdownName));
+    setActiveDropdowns(
+      (prev) =>
+        prev.includes(dropdownName)
+          ? prev.filter((name) => name !== dropdownName) // Supprime si déjà ouvert
+          : [...prev, dropdownName] // Ajoute sinon
+    );
   };
 
   const sections = [
@@ -27,19 +32,17 @@ function Dropdown() {
 
       <div className="flex flex-col gap-[30px] items-center justify-center">
         {sections.map((section) => (
-          <div key={section.name}>
+          <div className="w-[70%]" key={section.name}>
             {/* Dropdown section */}
             <div
-              className={`w-full sm:w-[90%] px-[10px] py-[10px] border-b-[1px] border-[#e0e0e0] cursor-pointer 
-              bg-[#ff6060] text-white rounded-[5px] ${
-                activeDropdown === section.name ? "active" : ""
-              }`}
+              className={`w-full px-[10px] py-[10px] border-b-[1px] border-[#e0e0e0] cursor-pointer 
+              bg-[#ff6060] text-white rounded-[5px]`}
             >
               <div
                 className="flex justify-between items-center w-full"
                 onClick={() => toggleDropdown(section.name)}
                 role="button"
-                aria-expanded={activeDropdown === section.name}
+                aria-expanded={activeDropdowns.includes(section.name)}
                 aria-controls={`${section.name}Content`}
                 tabIndex={0}
               >
@@ -50,13 +53,15 @@ function Dropdown() {
                 <FontAwesomeIcon
                   icon={faChevronUp}
                   className={`transition-transform duration-500 ease-in-out transform 
-                  ${activeDropdown === section.name ? "rotate-180" : ""}`}
+                  ${
+                    activeDropdowns.includes(section.name) ? "rotate-180" : ""
+                  }`}
                 />
               </div>
             </div>
 
             {/* Contenu affiché sous le dropdown */}
-            {activeDropdown === section.name && (
+            {activeDropdowns.includes(section.name) && (
               <div className="text mt-[10px] w-full sm:w-[90%]">
                 <p>{section.content}</p>
               </div>
