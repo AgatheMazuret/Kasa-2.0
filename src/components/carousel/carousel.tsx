@@ -5,15 +5,20 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Définition des props attendues pour le composant Carousel
+// images : tableau contenant les URLs des images à afficher
 type CarouselProps = { images: string[] };
 
 function Carousel({ images }: CarouselProps) {
+  // État pour suivre l'index de l'image actuellement affichée
   const [currentImage, setCurrentImage] = useState(0);
 
+  // Fonction pour passer à l'image suivante
   const nextImage = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  // Fonction pour revenir à l'image précédente
   const prevImage = () => {
     setCurrentImage(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
@@ -22,7 +27,7 @@ function Carousel({ images }: CarouselProps) {
 
   return (
     <div className="relative flex justify-center items-center w-[1240px] h-[415px] mb-5 max-w-full">
-      {/* Chevron gauche */}
+      {/* Bouton pour aller à l'image précédente */}
       <button
         className="absolute top-1/2 transform -translate-y-1/2 text-4xl text-white z-10 cursor-pointer left-5"
         onClick={prevImage}
@@ -30,14 +35,14 @@ function Carousel({ images }: CarouselProps) {
         <FontAwesomeIcon icon={faChevronLeft} />
       </button>
 
-      {/* Image du carousel */}
+      {/* Affichage de l'image actuelle */}
       <img
         src={images[currentImage]}
         alt="carousel"
-        className="w-[1240px] h-[415px] object-cover"
+        className=" object-cover w-auto h-[255px] lg:w-[1240px] lg:h-[415px]"
       />
 
-      {/* Chevron droit */}
+      {/* Bouton pour aller à l'image suivante */}
       <button
         className="absolute top-1/2 transform -translate-y-1/2 text-4xl text-white z-10 cursor-pointer right-5"
         onClick={nextImage}

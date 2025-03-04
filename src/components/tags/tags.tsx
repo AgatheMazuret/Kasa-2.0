@@ -10,7 +10,7 @@ function Tag({ tag }: TagsProps) {
           className="text-white bg-[#ff6060] rounded-[10px] px-5 py-2 text-sm font-bold w-[30%]"
           key={index}
         >
-          {t}
+          {t} {/* Affichage du texte du tag */}
         </div>
       ))}
     </div>
