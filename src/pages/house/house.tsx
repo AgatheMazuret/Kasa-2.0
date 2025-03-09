@@ -58,8 +58,8 @@ function House() {
       {/* Dropdowns pour la description et les équipements */}
       <div className="w-full px-4 md:w-[1240px]">
         <Dropdown
-          equipments={logement.equipments}
           description={logement.description}
+          equipments={logement.equipments}
         />
       </div>
     </div>
