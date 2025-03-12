@@ -35,10 +35,23 @@ function House() {
         </div>
       </div>
       <div className="w-full px-4 md:w-[1240px]">
-        <Dropdown
-          description={logement.description}
-          equipments={logement.equipments}
-        />
+        <div className="flex flex-col pt-[20px] md:flex-row gap-20">
+          {/* Dropdown pour la description */}
+          <Dropdown title="Description">
+            <div className="text-lg text-center">{logement.description}</div>
+          </Dropdown>
+
+          {/* Dropdown pour la liste des équipements */}
+          <Dropdown title="Equipments">
+            <ul>
+              {logement.equipments.map((item) => (
+                <li key={item} className="text-lg">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Dropdown>
+        </div>
       </div>
     </div>
   );
