@@ -12,7 +12,6 @@ type DropdownProps = {
 // Ce composant affichera deux dropdowns
 export function Dropdown({ description, equipments }: DropdownProps) {
   // États pour dire qu'initialement les 2 sont fermés
-  // key est une string et la valeur est un boolean
   const [openSections, setOpenSections] = useState<{ [key: string]: boolean }>({
     description: false,
     equipments: false,

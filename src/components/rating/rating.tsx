@@ -11,7 +11,7 @@ function Rating({ rating }: RatingProps) {
       {/* Génération des étoiles en fonction de la note */}
       {Array.from({ length: 5 }, (_, index) => (
         <img
-          key={index} // Attribution d'une clé unique à chaque image
+          key={index}
           src={index < Number(rating) ? starFull : starEmpty} // Choix de l'étoile pleine ou vide selon la note
           alt="star"
         />

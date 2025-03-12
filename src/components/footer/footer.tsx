@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-black w-full flex flex-col items-center justify-center mt-12 pb-8">
+    <footer className="bg-black w-full flex flex-col items-center justify-center mt-70 pb-8">
       <div className="flex flex-col items-center h-44 text-center">
         <img
           src="/logo-kasa-footer.png"

@@ -1,8 +1,7 @@
 type HostProps = {
-  // Définition des propriétés attendues pour le composant Host
   host: {
-    name: string; // Nom de l'hôte
-    picture: string; // URL de l'image de l'hôte
+    name: string;
+    picture: string;
   };
 };
 
@@ -22,20 +21,20 @@ function Host({ host }: HostProps) {
       {/* Section contenant l'image de l'hôte */}
       <div className="flex items-center justify-center p-0">
         <img
-          className="w-full lg:w-full lg:h-full object-cover rounded-full" // Styles pour rendre l'image ronde et responsive
-          src={host.picture} // L'image de l'hôte
-          alt={`Picture of ${host.name}`} // Description alternative de l'image
+          className="w-full lg:w-full lg:h-full object-cover rounded-full"
+          src={host.picture}
+          alt={`Picture of ${host.name}`}
         />
       </div>
 
       {/* Section affichant le nom de l'hôte */}
       <div className="flex items-center ">
         <p className="text-base text-[#ff6060] lg:text-lg  font-medium  lg:mr-4">
-          {host.name} {/* Nom de l'hôte */}
+          {host.name}
         </p>
       </div>
     </div>
   );
 }
 
-export default Host; // Exportation du composant Host pour l'utiliser ailleurs
+export default Host;

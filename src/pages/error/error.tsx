@@ -6,7 +6,7 @@ function Error() {
       <h1 className="flex items-center justify-center text-6xl text-red-400 my-16 lg:text-[288px] md:my-36">
         404
       </h1>
-      <h2 className="flex items-center justify-center text-sm text-red-400 md:text-xl">
+      <h2 className="flex items-center justify-center text-m mb-[60] text-red-400 md:text-xl">
         Oups! La page que vous demandez n'existe pas.
       </h2>
 

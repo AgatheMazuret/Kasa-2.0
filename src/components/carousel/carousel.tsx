@@ -5,8 +5,6 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Définition des props attendues pour le composant Carousel
-// images : tableau contenant les URLs des images à afficher
 type CarouselProps = { images: string[] };
 
 function Carousel({ images }: CarouselProps) {
@@ -21,6 +19,7 @@ function Carousel({ images }: CarouselProps) {
   // Fonction pour revenir à l'image précédente
   const prevImage = () => {
     setCurrentImage(
+      // Décrémente l'index et boucle à la dernière image si nécessaire.
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
